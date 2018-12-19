@@ -1,0 +1,188 @@
+﻿<Window x:Class="caler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:caler"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="甘肃戎辉拍卖有限公司  -  拍卖提示板" Height="720" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="Foreground"  Value="Blue"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="BorderThickness" Value="0.5"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+        </Style>
+        <Style TargetType="FrameworkElement" x:Key="AlignCenter">
+
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="#FF11319E"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+        </Style>
+
+        <Style TargetType="Label" x:Key="LabelStyle">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFFFFCFC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="340"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label  Grid.Row="0"  VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="70" FontFamily="仿宋">甘肃戎辉拍卖有限公司</Label>
+        <Grid Grid.Row="1" Background="LightBlue" Margin="0,4,0,337" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Label  VerticalAlignment="Center" FontSize="40" Margin="10">应价号牌:</Label>
+                <TextBox Text="{Binding Yjhp,Mode=TwoWay}" Height="Auto" VerticalAlignment="Center" Width="180" FontSize="40"/>
+                <Label VerticalAlignment="Center" FontSize="40">号</Label>
+            </StackPanel>
+            <DatePicker IsTodayHighlighted="True"  Name="dt" VerticalAlignment="Center" HorizontalAlignment="Right" Width="220" FontSize="30" Margin="10"></DatePicker>
+        </Grid>
+        <Grid Grid.Row="2" Background="#FFF">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="160"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border  Grid.Row="0"  BorderThickness="0,0.5" BorderBrush="#000">
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="TextBox">
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                            <Setter Property="TextAlignment" Value="Center"></Setter>
+                            <Setter Property="Foreground" Value="#FF11319E"></Setter>
+                            <Setter Property="FontSize" Value="40"></Setter>
+                            <Setter Property="BorderThickness" Value="0"></Setter>
+                            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                            <Setter Property="Background" Value="Transparent"></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" BorderThickness="0,0.5,0.5,0" >
+                        <Label Style="{StaticResource LabelStyle}">宗地编号</Label>
+                    </Border>
+                    <Border  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0.5,0.5,0.5,0">
+                        <Label Style="{StaticResource LabelStyle}">宗地面积</Label>
+                    </Border>
+                    <Border  Grid.Row="0" Grid.Column="3" BorderThickness="0.5,0.5,0.5,0">
+                        <Label Style="{StaticResource LabelStyle}">绿化率</Label>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="4" BorderThickness="0.5,0.5,0.5,0">
+                        <Label Style="{StaticResource LabelStyle}">土地用途</Label>
+                    </Border>
+                    <Border  Grid.Row="0" Grid.Column="5" BorderThickness="0.5,0.5,0.5,0">
+                        <Label Style="{StaticResource LabelStyle}">容积率</Label>
+                    </Border>
+                    <Border  Grid.Row="0" Grid.Column="6" BorderThickness="0.5,0.5,0,0" >
+                        <Label Style="{StaticResource LabelStyle}">建筑密度</Label>
+                    </Border>
+
+                    <Border  Grid.Row="1" Grid.Column="0" BorderThickness="0,0.5,0.5,0.5">
+                        <TextBox Name="tb_zdbh"></TextBox>
+                    </Border>
+
+                    <Border  Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+                        <Grid ShowGridLines="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding Pfm,Mode=TwoWay}" Grid.Row="0" Grid.Column="0" Name="tb_pfm" FontSize="25" TextChanged="Tb_pfm_change" />
+                            <TextBox Text="{Binding M,Mode=TwoWay}" Grid.Row="1"  Grid.Column="0" Name="tb_m" FontSize="25" TextChanged="Tb_m_change" Margin="0,6,0,1" />
+                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyle}">平方米</Label>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyle}">亩</Label>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Row="1" Grid.Column="3">
+                        <TextBox Name="tb_lhl"></TextBox>
+                    </Border>
+                    <Border  Grid.Row="1" Grid.Column="4">
+                        <TextBox Name="tb_tdyt" FontSize="20"></TextBox>
+                    </Border>
+                    <Border  Grid.Row="1" Grid.Column="5">
+                        <TextBox Text="{Binding Rjl,Mode=TwoWay}" Name="tb_rjl"></TextBox>
+                    </Border>
+                    <Border  Grid.Row="1" Grid.Column="6" BorderThickness="0.5,0.5,0,0.5">
+                        <TextBox Name="tb_jzmd"></TextBox>
+                    </Border>
+                </Grid>
+            </Border>
+            <Label Background="LightBlue" Grid.Row="1"></Label>
+            <Border  Grid.Row="2"  BorderThickness="0,1" BorderBrush="#000">
+                <Grid ShowGridLines="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}">起始价(万)</Label>
+                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyle}">每亩地单价</Label>
+                    <TextBox Text="{Binding MmdDj,Mode=TwoWay}" Grid.Row="0" Grid.Column="2"   Name="tb_mmddj" GotFocus="Tb_mmddj_GotFocus"></TextBox>
+                    <TextBox Text="{Binding Qsj,Mode=TwoWay}" Grid.Row="1" Grid.Column="0"   Name="tb_qsj"></TextBox>
+                    <TextBox Text="{Binding Mpfmdj,Mode=TwoWay}"  Grid.Row="1" Grid.Column="2"   Name="tb_mpfmdj" GotFocus="Tb_mpfmdj_GotFocus"></TextBox>
+                    <TextBox Text="{Binding Lmdj,Mode=TwoWay}" Grid.Row="0" Grid.Column="5"   Name="tb_lmdj" GotFocus="Tb_lmdj_GotFocus"></TextBox>
+                    <TextBox Text="{Binding Dqzddj,Mode=TwoWay}" Grid.Row="1" Grid.Column="5"   Name="tb_dqzdbj" GotFocus="Tb_dqzdbj_GotFocus" Margin="0,19,0,16"/>
+                    <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelStyle}">万元</Label>
+                    <Label Grid.Row="0" Grid.Column="4" Style="{StaticResource LabelStyle}">楼面地价</Label>
+
+                    <Label Grid.Row="0" Grid.Column="6" Style="{StaticResource LabelStyle}">元</Label>
+
+                    <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource LabelStyle}">元</Label>
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyle}">每平方米单价</Label>
+                    <Label Grid.Row="1" Grid.Column="4" Style="{StaticResource LabelStyle}">当前宗地报价</Label>
+                    <Label Grid.Row="1" Grid.Column="6" Style="{StaticResource LabelStyle}">万元</Label>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Margin="20" Foreground="#000" Grid.Column="0" Click="CalButtonClick" FontSize="30">计算结果</Button>
+            <Button Margin="20" Foreground="#000" Grid.Column="1" Click="SuccessButtonClick" FontSize="30">拍卖成功</Button>
+        </Grid>
+    </Grid>
+</Window>
